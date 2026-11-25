@@ -235,7 +235,8 @@ input::placeholder { color: #69756d; }
   .print-button { padding-inline: 10px; }
 }
 
-@page { size: A4 landscape; margin: 9mm; }
+/* Zero page margins suppress browser-generated headers and footers. */
+@page { size: A4 landscape; margin: 0; }
 
 @media print {
   :root, body { background: #fff; }
@@ -250,6 +251,7 @@ input::placeholder { color: #69756d; }
     overflow: visible;
     background: #fff;
   }
+  .preview-stage { padding: 9mm; }
   .certificate {
     width: 100%;
     max-width: 279mm;
